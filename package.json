@@ -1,13 +1,13 @@
 {
-  "name": "semana_05",
+  "name": "parcial-1",
   "version": "1.0.0",
-  "description": "1. Crear un repositorio \r 2. Agregar a los integrantes del equipo\r 3. Agregarme jonathancruzdev\r 4. Publicar el link del repo en el classroom",
+  "description": "API de películas creada por Diego Quisbert y Nicolas Rodriguez",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "author": "",
+  "author": "Diego Quisbert & Nicolas Rodriguez",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
