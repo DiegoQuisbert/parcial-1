@@ -5,8 +5,8 @@ const {createTask, getTasks, getTasksByUserId, deleteTasksById, updateTaskById} 
 
 router.get('/', getTasks);
 router.post('/', createTask);
-router.get('/', getTasksByUserId);
-router.delete('/', deleteTasksById);
-router.put('/', updateTaskById);
+router.get('/:id', getTasksByUserId);
+router.delete('/:id', deleteTasksById);
+router.put('/:id', updateTaskById);
 
 module.exports = router;
