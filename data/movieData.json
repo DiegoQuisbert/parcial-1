@@ -1,0 +1,143 @@
+[
+    {
+      "id": "1",
+      "name": "The Shawshank Redemption",
+      "releaseYear": 1994,
+      "genre": "Drama",
+      "director": "Frank Darabont"
+    },
+    {
+      "id": "2",
+      "name": "The Godfather",
+      "releaseYear": 1972,
+      "genre": "Crime",
+      "director": "Francis Ford Coppola"
+    },
+    {
+      "id": "3",
+      "name": "The Dark Knight",
+      "releaseYear": 2008,
+      "genre": "Action",
+      "director": "Christopher Nolan"
+    },
+    {
+      "id": "4",
+      "name": "Pulp Fiction",
+      "releaseYear": 1994,
+      "genre": "Crime",
+      "director": "Quentin Tarantino"
+    },
+    {
+      "id": "5",
+      "name": "Forrest Gump",
+      "releaseYear": 1994,
+      "genre": "Drama",
+      "director": "Robert Zemeckis"
+    },
+    {
+      "id": "6",
+      "name": "Inception",
+      "releaseYear": 2010,
+      "genre": "Sci-Fi",
+      "director": "Christopher Nolan"
+    },
+    {
+      "id": "7",
+      "name": "Fight Club",
+      "releaseYear": 1999,
+      "genre": "Drama",
+      "director": "David Fincher"
+    },
+    {
+      "id": "8",
+      "name": "The Matrix",
+      "releaseYear": 1999,
+      "genre": "Sci-Fi",
+      "director": "The Wachowskis"
+    },
+    {
+      "id": "9",
+      "name": "The Lord of the Rings: The Return of the King",
+      "releaseYear": 2003,
+      "genre": "Fantasy",
+      "director": "Peter Jackson"
+    },
+    {
+      "id": "10",
+      "name": "Interstellar",
+      "releaseYear": 2014,
+      "genre": "Sci-Fi",
+      "director": "Christopher Nolan"
+    },
+    {
+      "id": "11",
+      "name": "Gladiator",
+      "releaseYear": 2000,
+      "genre": "Action",
+      "director": "Ridley Scott"
+    },
+    {
+      "id": "12",
+      "name": "The Lion King",
+      "releaseYear": 1994,
+      "genre": "Animation",
+      "director": "Roger Allers, Rob Minkoff"
+    },
+    {
+      "id": "13",
+      "name": "Back to the Future",
+      "releaseYear": 1985,
+      "genre": "Sci-Fi",
+      "director": "Robert Zemeckis"
+    },
+    {
+      "id": "14",
+      "name": "Schindler's List",
+      "releaseYear": 1993,
+      "genre": "History",
+      "director": "Steven Spielberg"
+    },
+    {
+      "id": "15",
+      "name": "Parasite",
+      "releaseYear": 2019,
+      "genre": "Thriller",
+      "director": "Bong Joon-ho"
+    },
+    {
+      "id": "16",
+      "name": "Avengers: Endgame",
+      "releaseYear": 2019,
+      "genre": "Action",
+      "director": "Anthony Russo, Joe Russo"
+    },
+    {
+      "id": "17",
+      "name": "Titanic",
+      "releaseYear": 1997,
+      "genre": "Romance",
+      "director": "James Cameron"
+    },
+    {
+      "id": "18",
+      "name": "The Silence of the Lambs",
+      "releaseYear": 1991,
+      "genre": "Thriller",
+      "director": "Jonathan Demme"
+    },
+    {
+      "id": "19",
+      "name": "Jurassic Park",
+      "releaseYear": 1993,
+      "genre": "Adventure",
+      "director": "Steven Spielberg"
+    },
+    {
+      "id": "20",
+      "name": "The Social Network",
+      "releaseYear": 2010,
+      "genre": "Biography",
+      "director": "David Fincher"
+    }
+  ]
+  
