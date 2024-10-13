@@ -36,3 +36,142 @@ npm i
 # Iniciar el proyecto
 
 npm start
+
+# Crear un Usuario
+
+#     Método: POST
+#     URL: http://localhost:3000/users
+#     Body (JSON):
+
+# json
+
+# {
+#   "name": "Nicolas Rodriguez",
+#   "email": "nicolas@example.com",
+#   "password": "123456"
+# }
+
+# Añadir una Película
+
+#     Método: POST
+#     URL: http://localhost:3000/movies
+#     Body (JSON):
+
+#  json
+
+#     {
+#       "title": "Matrix",
+#       "genre": "Sci-Fi",
+#       "year": 1999,
+#       "director": "616e6e77eae4e232b8b758c7",
+#       "reviews": ["Increíble!", "Ciencia ficción en su máxima expresión"]
+#     }
+
+# Registrar un Director
+
+#     Método: POST
+#     URL: http://localhost:3000/directors
+#     Body (JSON):
+
+# json
+
+#     {
+#       "name": "Lana Wachowski",
+#       "birthYear": 1965,
+#       "nationality": "Estadounidense"
+#     }
+
+# Rutas
+# A continuación se describen las rutas disponibles en esta API:
+# Método	Endpoint	Descripción
+# POST	/users	Crear un nuevo usuario
+# POST	/movies	Añadir una nueva película
+# POST	/directors	Registrar un nuevo director
+# GET	/movies	Obtener todas las películas
+# GET	/movies/{id}	Obtener película por ID
+# GET	/movies?name={name}	Buscar película por nombre
+# GET	/directors	Obtener todos los directores
+
+# Modelos
+# User Model (models/userModel.js)
+
+# javascript
+
+# const mongoose = require('mongoose');
+
+# const userSchema = new mongoose.Schema({
+#   name: String,
+#   email: { type: String, unique: true },
+#   password: String,
+#   role: { type: String, default: 'user' }
+# });
+
+# module.exports = mongoose.model('User', userSchema);
+
+# Movie Model (models/movieModel.js)
+
+# javascript
+
+# const mongoose = require('mongoose');
+
+# const movieSchema = new mongoose.Schema({
+#   title: String,
+#   genre: String,
+#   year: Number,
+#   director: { type: mongoose.Schema.Types.ObjectId, ref: 'Director' },
+#   reviews: [{ type: String }]
+# });
+
+# module.exports = mongoose.model('Movie', movieSchema);
+
+# Director Model (models/directorModel.js)
+
+# javascript
+
+# const mongoose = require('mongoose');
+
+# const directorSchema = new mongoose.Schema({
+#   name: String,
+#   birthYear: Number,
+#   nationality: String
+# });
+
+# module.exports = mongoose.model('Director', directorSchema);
+
+# Controllers
+# User Controller (controllers/userController.js)
+
+# javascript
+
+# const User = require('../models/userModel');
+
+# const createUser = async (req, res) => {
+#   try {
+#     const newUser = new User(req.body);
+#     await newUser.save();
+#     res.status(201).json({ message: 'Usuario creado', user: newUser });
+#   } catch (error) {
+#     res.status(400).json({ error: error.message });
+#   }
+# };
+
+# module.exports = { createUser };
+
+# Movie Controller (controllers/movieController.js)
+
+# javascript
+
+# const Movie = require('../models/movieModel');
+
+# const createMovie = async (req, res) => {
+#   try {
+#     const newMovie = new Movie(req.body);
+#     await newMovie.save();
+#     res.status(201).json({ message: 'Película añadida', movie: newMovie });
+#   } catch (error) {
+#     res.status(400).json({ error: error.message });
+#   }
+# };
+
+# module.exports = { createMovie };
+
