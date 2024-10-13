@@ -1,7 +1,22 @@
 const Movie = require('../models/movieModel'); 
 
-const createMovie = async (req, res) => {
-    
+const addMovie = async (req, res) => {
+    const {title, director, genre, premiere, duration, synopsis} = req.body;
+
+    if(!title || !director || !genre || !premiere || !duration || !synopsis){
+        res.status(400).json({msg: 'Falta informacion :/', data: {title, director, genre, premiere, duration, synopsis}});
+    }
+
+    try {
+        const movie = await Movie.findById();
+
+        const newMovie = new Movie({title, director, genre, premiere, duration, synopsis});
+        await newMovie.save();
+        res.status(200).json({msg: 'La peli fue creada', data: newMovie})
+    }catch(error){
+        console.error(error);
+        res.status(500).json({msg: 'contamos con un error chaval', data: {}});
+    }
 };
 
 const getMovies = async (req, res) => {
@@ -87,7 +102,7 @@ const searchMovie = async (req, res) => {
 };
 
 module.exports = {
-    createMovie,
+    addMovie,
     getMovies,
     getMovieById,
     updateMovieById,

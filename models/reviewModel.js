@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const taskSchema = new Schema({
-    description: String,
+const reviewSchema = new Schema({
+    review: String,
     created: {
         type: Date,
         default: Date.now
@@ -18,6 +18,6 @@ const taskSchema = new Schema({
     }
 });
 
-const Task = mongoose.model('Model', taskSchema);
+const Review = mongoose.model('Model', reviewSchema);
 
-module.exports = Task;
+module.exports = Review;

@@ -1,15 +1,7 @@
 [
     {
-      "id": "1",
-      "name": "Diego Quisbert",
-      "email": "diego.quisbert@davinci.edu.ar",
-      "password": "1234"
-    },
-    {
-      "id": "2",
-      "name": "Nicolas Rodriguez",
-      "email": "nicolas.mrodriguez@davinci.edu.ar",
-      "password": "1243"
+        "name" : "",
+        "email" : "",
+        "password" : ""
     }
-  ]
-  
+]

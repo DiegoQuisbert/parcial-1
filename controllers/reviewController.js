@@ -1,31 +1,31 @@
-const Task = require('../models/taskModel');
+const Review = require('../models/reviewModel');
 const User = require('../models/userModel');
 
-const createTask = async(req, res) => {
-    const {description, userId} = req.body;
+const createReview = async(req, res) => {
+    const {review, userId} = req.body;
 
-    if(!description || !userId){
-        res.status(400).json({msg: 'Faltan parámetros :/', data: {description, userId}});
+    if(!review || !userId){
+        res.status(400).json({msg: 'Faltan parámetros :/', data: {review, userId}});
     }
 
     try {
         const user = await User.findById(userId);
 
-        const newTask = new Task({description, user: user._id});
-        await newTask.save();
-        res.status(200).json({msg: 'La tarea fue creada', data: newTask})
+        const newReview = new Review({review, user: user._id});
+        await newReview.save();
+        res.status(200).json({msg: 'La tarea fue creada', data: newReview})
     }catch(error){
         console.error(error);
         res.status(500).json({msg: 'contamos con un error chaval', data: {}});
     }
 }
 
-const getTasks = async (req, res) => {
-    const tasks = req.params;
-    res.status(200).json({msg: 'oke', data: tasks});
+const getReviews = async (req, res) => {
+    const review = req.params;
+    res.status(200).json({msg: 'oke', data: reviews});
 }
 
-const getTasksByUserId = async (req, res) => {
+const getReviewsByUserId = async (req, res) => {
     const {id} = req.params;
     try {
         const user = await User.findById(id);
@@ -40,12 +40,12 @@ const getTasksByUserId = async (req, res) => {
     }
 }
 
-const deleteTasksById = async (req, res) => {
+const deleteReviewsById = async (req, res) => {
     const {id} = req.params;
     try {
-        const task = await Task.findByIdAndDelete(id);
-        if(task){
-            res.status(200).json({msg: 'tarea eliminada', data: task});
+        const review = await Review.findByIdAndDelete(id);
+        if(review){
+            res.status(200).json({msg: 'tarea eliminada', data: review});
         }else {
             res.status(404).json({msg: 'La tarea no ha sido eliminada', data: {}})
         }
@@ -55,13 +55,13 @@ const deleteTasksById = async (req, res) => {
     }
 }
 
-const updateTaskById = async (req, res) => {
+const updateReviewById = async (req, res) => {
     const {id} = req.params;
-    const {description} = req.body;
+    const {review} = req.body;
     try {
-        const task = await Task.findByIdAndUpdate(id, {description}, {new: true});
-        if(task){
-            res.status(200).json({msg: 'tarea actualizada', data: task});
+        const review = await Review.findByIdAndUpdate(id, {review}, {new: true});
+        if(review){
+            res.status(200).json({msg: 'tarea actualizada', data: review});
         }else {
             res.status(404).json({msg: 'La tarea no ha sido actualizada', data: {}})
         }
@@ -71,4 +71,4 @@ const updateTaskById = async (req, res) => {
     }
 }
 
-module.exports = {createTask, getTasks, getTasksByUserId, deleteTasksById, updateTaskById};
+module.exports = {createReview, getReviews, getReviewsByUserId, deleteReviewsById, updateReviewById};

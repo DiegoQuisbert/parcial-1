@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const {createMovie, getMovies, getMovieById, updateMovieById, deleteMovieById, /* función de filtrado */ searchMovie} = require('../controllers/movieController');
+const {addMovie, getMovies, getMovieById, updateMovieById, deleteMovieById, filterMovies, searchMovie} = require('../controllers/movieController');
 
-router.post('/', createMovie);
+router.post('/', addMovie);
 router.get('/', getMovies);
-router.get('/', getMovieById);
-router.put('/', updateMovieById);
-router.delete('/', deleteMovieById);
-//router.get('/', método de filtrado);
+router.get('/:id', getMovieById);
+router.put('/:id', updateMovieById);
+router.delete('/:id', deleteMovieById);
+router.get('/', filterMovies);
 router.get('/', searchMovie);
 
 module.exports = router;
