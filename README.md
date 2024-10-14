@@ -68,9 +68,12 @@ Colocar el ID de un usuario y presionar el botón
 
 # Crear un Usuario
 
+``` bash
 #     Método: POST
 #     URL: http://localhost:3000/users
 #     Body (JSON):
+
+``` 
 
 ``` bash
 
