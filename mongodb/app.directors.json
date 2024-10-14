@@ -1,0 +1,144 @@
+[{
+  "_id": {
+    "$oid": "670c24ce3373fe99042e05f5"
+  },
+  "compName": "Christopher Nolan",
+  "age": 53,
+  "biography": "Director británico",
+  "created": {
+    "$date": "2024-10-13T19:51:42.750Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8a082eddebc51e24c6ae"
+  },
+  "compName": "Steven Spielberg",
+  "age": 76,
+  "biography": "Steven Spielberg es un director, productor y guionista estadounidense, conocido por sus películas icónicas como 'E.T. el Extraterrestre', 'Jurassic Park' y 'La Lista de Schindler'.",
+  "created": {
+    "$date": "2024-10-14T21:15:52.004Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8a102eddebc51e24c6b1"
+  },
+  "compName": "Martin Scorsese",
+  "age": 81,
+  "biography": "Martin Scorsese es un director, productor y guionista estadounidense, conocido por sus trabajos en películas como 'Taxi Driver', 'Goodfellas' y 'The Irishman'.",
+  "created": {
+    "$date": "2024-10-14T21:16:00.915Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8a182eddebc51e24c6b4"
+  },
+  "compName": "Quentin Tarantino",
+  "age": 60,
+  "biography": "Quentin Tarantino es un director, guionista y productor estadounidense, famoso por su estilo distintivo en películas como 'Pulp Fiction', 'Kill Bill' y 'Inglourious Basterds'.",
+  "created": {
+    "$date": "2024-10-14T21:16:08.722Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8a212eddebc51e24c6b7"
+  },
+  "compName": "Christopher Nolan",
+  "age": 53,
+  "biography": "Christopher Nolan es un director, productor y guionista británico, conocido por su trabajo en películas como 'Inception', 'The Dark Knight' y 'Interstellar'.",
+  "created": {
+    "$date": "2024-10-14T21:16:17.323Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8a292eddebc51e24c6ba"
+  },
+  "compName": "Alfonso Cuarón",
+  "age": 62,
+  "biography": "Alfonso Cuarón es un director, productor y guionista mexicano, conocido por sus películas 'Gravity', 'Roma' y 'Children of Men'.",
+  "created": {
+    "$date": "2024-10-14T21:16:25.511Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8a302eddebc51e24c6bd"
+  },
+  "compName": "Greta Gerwig",
+  "age": 40,
+  "biography": "Greta Gerwig es una directora, guionista y actriz estadounidense, famosa por su trabajo en 'Lady Bird' y 'Little Women'.",
+  "created": {
+    "$date": "2024-10-14T21:16:32.258Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8a3e2eddebc51e24c6c0"
+  },
+  "compName": "James Cameron",
+  "age": 69,
+  "biography": "James Cameron es un director, productor y guionista canadiense, conocido por sus películas de gran éxito como 'Titanic' y 'Avatar'.",
+  "created": {
+    "$date": "2024-10-14T21:16:46.413Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8a462eddebc51e24c6c3"
+  },
+  "compName": "Pedro Almodóvar",
+  "age": 74,
+  "biography": "Pedro Almodóvar es un director, guionista y productor español, conocido por su estilo único en películas como 'Todo sobre mi madre' y 'Hable con ella'.",
+  "created": {
+    "$date": "2024-10-14T21:16:54.937Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8a4d2eddebc51e24c6c6"
+  },
+  "compName": "David Fincher",
+  "age": 61,
+  "biography": "David Fincher es un director, productor y guionista estadounidense, conocido por su trabajo en películas como 'Fight Club', 'Se7en' y 'The Social Network'.",
+  "created": {
+    "$date": "2024-10-14T21:17:01.784Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8a562eddebc51e24c6c9"
+  },
+  "compName": "Hayao Miyazaki",
+  "age": 83,
+  "biography": "Hayao Miyazaki es un director de cine de animación japonés, famoso por sus películas de Studio Ghibli como 'Spirited Away' y 'My Neighbor Totoro'.",
+  "created": {
+    "$date": "2024-10-14T21:17:10.397Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8a5d2eddebc51e24c6cc"
+  },
+  "compName": "Hayao Miyazaki",
+  "age": 83,
+  "biography": "Hayao Miyazaki es un director de cine de animación japonés, famoso por sus películas de Studio Ghibli como 'Spirited Away' y 'My Neighbor Totoro'.",
+  "created": {
+    "$date": "2024-10-14T21:17:17.802Z"
+  },
+  "__v": 0
+}]

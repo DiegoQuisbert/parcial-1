@@ -52,7 +52,7 @@ const login = async (req, res) => {
         res.status(200).json({msg: 'exito!', data: {jwt: token}});
     } catch(error){
         console.error(error)
-        res.status(500).json({msg: 'tenemo un eror wtf', data: users});
+        res.status(500).json({msg: 'tenemo un error wtf', data: users});
     }
 }
 

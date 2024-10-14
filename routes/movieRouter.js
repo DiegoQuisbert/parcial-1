@@ -8,7 +8,7 @@ router.get('/', getMovies);
 router.get('/:id', getMovieById);
 router.put('/:id', updateMovieById);
 router.delete('/:id', deleteMovieById);
-router.get('/', filterMovies);
-router.get('/', searchMovie);
+router.get('/filter', filterMovies);
+router.get('/search', searchMovie);
 
 module.exports = router;

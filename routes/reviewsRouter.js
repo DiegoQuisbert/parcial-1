@@ -3,8 +3,8 @@ const router = express.Router();
 
 const {createReview, getReviews, getReviewsByUserId, deleteReviewsById, updateReviewById} = require('../controllers/reviewController');
 
-router.get('/', createReview);
-router.post('/', getReviews);
+router.post('/', createReview);
+router.get('/', getReviews);
 router.get('/:id', getReviewsByUserId);
 router.delete('/:id', deleteReviewsById);
 router.put('/:id', updateReviewById);

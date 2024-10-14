@@ -2,44 +2,47 @@ const Review = require('../models/reviewModel');
 const User = require('../models/userModel');
 
 const createReview = async(req, res) => {
-    const {review, userId} = req.body;
+    const { review, userId } = req.body;
 
-    if(!review || !userId){
-        res.status(400).json({msg: 'Faltan parámetros :/', data: {review, userId}});
+    if (!review || !userId) {
+        return res.status(400).json({ msg: 'Faltan parámetros :/', data: { review, userId } });
     }
 
     try {
         const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).json({ msg: 'Usuario no encontrado' });
+        }
 
-        const newReview = new Review({review, user: user._id});
+        const newReview = new Review({ review, user: user._id });
         await newReview.save();
-        res.status(200).json({msg: 'La tarea fue creada', data: newReview})
-    }catch(error){
+        res.status(200).json({ msg: 'La reseña fue creada', data: newReview });
+    } catch (error) {
         console.error(error);
-        res.status(500).json({msg: 'contamos con un error chaval', data: {}});
+        res.status(500).json({ msg: 'Contamos con un error', data: {} });
     }
 }
 
+
 const getReviews = async (req, res) => {
-    const review = req.params;
-    res.status(200).json({msg: 'oke', data: review});
+    const reviews = await Review.find().populate('user');
+    res.status(200).json({msg: 'oke', data: reviews});
 }
 
 const getReviewsByUserId = async (req, res) => {
-    const {id} = req.params;
+    const { id } = req.params;
     try {
-        const user = await User.findById(id);
-        if(user){
-            res.status(200).json({msg: 'tarea obtenida', data: user});
-        }else {
-            res.status(404).json({msg: 'La tarea no ha sido encontrada', data: {}})
+        const reviews = await Review.find({ user: id }).populate('user');
+        if (reviews.length > 0) {
+            res.status(200).json({ msg: 'Reseñas encontradas', data: reviews });
+        } else {
+            res.status(404).json({ msg: 'No se encontraron reseñas para este usuario', data: {} });
         }
-    }catch(error){
+    } catch (error) {
         console.error(error);
-        res.status(500).json({msg: 'tenemos un nuevo error tio', data: {}})
+        res.status(500).json({ msg: 'Error al obtener las reseñas', data: {} });
     }
 }
-
 const deleteReviewsById = async (req, res) => {
     const {id} = req.params;
     try {

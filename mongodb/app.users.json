@@ -1,0 +1,59 @@
+[{
+  "_id": {
+    "$oid": "67098030d712df49e6d17f8c"
+  },
+  "email": "carlos@gmail.com.ar",
+  "password": "$2b$10$wOYkvWZo73MLiPkyv9tyQ.8cc8wEHK/6P8Q3SZcjJGPkzHDvfOqhq",
+  "created": {
+    "$date": "2024-10-11T19:44:48.100Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67098065811b7fb848ff56cf"
+  },
+  "name": "carlos juan",
+  "email": "carlos@gmail.com",
+  "password": "$2b$10$5zxGESsuC5nJ6RwnlYMz.OY11FAa37DM3.oXZAUcwpUzFrLri44o2",
+  "created": {
+    "$date": "2024-10-11T19:45:41.842Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670b520bcda80fe6cef9f170"
+  },
+  "name": "pepe",
+  "email": "pepe@gmail.com",
+  "password": "$2b$10$MdXpPEBA/io.rl75SN85yejay1ecr1rzHshxySmncttSRFzWMafa.",
+  "created": {
+    "$date": "2024-10-13T04:52:27.288Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670b5259cda80fe6cef9f172"
+  },
+  "name": "maria",
+  "email": "maria@gmail.com",
+  "password": "$2b$10$u6UKnYVA3fHdfE.eGyBzmeUYxlaRQYB1M6exBHeez2UA6RSk4atS2",
+  "created": {
+    "$date": "2024-10-13T04:53:45.370Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670c20ecdaa7eb9d0cfd5b5c"
+  },
+  "name": "infojobi",
+  "email": "infojobi@gmail.com",
+  "password": "$2b$10$cHFKCZgWhk3wpyAtvjeT7eLaI/kQnF46Y87HcQdPcGxv.mN12rA4S",
+  "created": {
+    "$date": "2024-10-13T19:35:08.105Z"
+  },
+  "__v": 0
+}]

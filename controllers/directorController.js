@@ -4,7 +4,7 @@ const addDirector = async (req, res) => {
     const {compName, age, biography, } = req.body;
 
     if(!compName || !age || !biography){
-        res.status(400).json({msg: 'Faltan parámetros :/', data: {compName, age, biography}});
+        return res.status(400).json({msg: 'Faltan parámetros :/', data: {compName, age, biography}});
     }
 
     try {

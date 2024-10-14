@@ -3,7 +3,7 @@ const routerAPI = require('./routes');
 const db = require('./config/dataBase.js'); 
 require('dotenv').config();
 
-const port = process.env.PORT || 3000; 
+const port = process.env.PORT; 
 const app = express();
 
 
@@ -35,7 +35,6 @@ app.get('/', (req, res) => {
 
 
 routerAPI(app);
-
 
 app.use((req, res) => {
     res.status(404).json({ error: 'Ruta no encontrada' });

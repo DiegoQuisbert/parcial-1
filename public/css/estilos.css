@@ -1,0 +1,32 @@
+body {
+    background-color: #f8f9fa;
+}
+
+header {
+    background-image: linear-gradient(to right, #343a40, #495057);
+    padding: 40px 0;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn {
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #e9ecef;
+}
+
+pre {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}

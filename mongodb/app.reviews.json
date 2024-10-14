@@ -1,0 +1,70 @@
+[{
+  "_id": {
+    "$oid": "670d8cc21961081466631b36"
+  },
+  "review": "buena peli",
+  "completed": false,
+  "user": {
+    "$oid": "67098030d712df49e6d17f8c"
+  },
+  "created": {
+    "$date": "2024-10-14T21:27:30.720Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8cd81961081466631b3a"
+  },
+  "review": "bastante buena la peli, soy carlos",
+  "completed": false,
+  "user": {
+    "$oid": "67098065811b7fb848ff56cf"
+  },
+  "created": {
+    "$date": "2024-10-14T21:27:52.829Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8ced1961081466631b3e"
+  },
+  "review": "estuvo muy entretenida",
+  "completed": false,
+  "user": {
+    "$oid": "670b520bcda80fe6cef9f170"
+  },
+  "created": {
+    "$date": "2024-10-14T21:28:13.298Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8d091961081466631b42"
+  },
+  "review": "la verdad es que esta peli me sorprendió en gran medida",
+  "completed": false,
+  "user": {
+    "$oid": "670b5259cda80fe6cef9f172"
+  },
+  "created": {
+    "$date": "2024-10-14T21:28:41.378Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8d1c1961081466631b46"
+  },
+  "review": "hola",
+  "completed": false,
+  "user": {
+    "$oid": "670c20ecdaa7eb9d0cfd5b5c"
+  },
+  "created": {
+    "$date": "2024-10-14T21:29:00.926Z"
+  },
+  "__v": 0
+}]

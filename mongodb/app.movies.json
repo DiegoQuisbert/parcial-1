@@ -1,0 +1,170 @@
+[{
+  "_id": {
+    "$oid": "670d8a8c7820e7f7e762b6dc"
+  },
+  "title": "Jurassic Park",
+  "director": "Steven Spielberg",
+  "genre": "Ciencia ficción",
+  "premiere": {
+    "$date": "1993-06-11T00:00:00.000Z"
+  },
+  "duration": 127,
+  "synopsis": "Un grupo de personas visita un parque temático donde los dinosaurios han sido clonados a partir de ADN antiguo.",
+  "created": {
+    "$date": "2024-10-14T21:18:04.903Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8a947820e7f7e762b6df"
+  },
+  "title": "Taxi Driver",
+  "director": "Martin Scorsese",
+  "genre": "Drama",
+  "premiere": {
+    "$date": "1976-02-08T00:00:00.000Z"
+  },
+  "duration": 113,
+  "synopsis": "Un veterano de Vietnam se convierte en taxista en Nueva York y se enfrenta a la decadencia de la ciudad.",
+  "created": {
+    "$date": "2024-10-14T21:18:12.242Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8a997820e7f7e762b6e2"
+  },
+  "title": "Pulp Fiction",
+  "director": "Quentin Tarantino",
+  "genre": "Crimen",
+  "premiere": {
+    "$date": "1994-10-14T00:00:00.000Z"
+  },
+  "duration": 154,
+  "synopsis": "Varios personajes se cruzan en historias de crimen en Los Ángeles.",
+  "created": {
+    "$date": "2024-10-14T21:18:17.708Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8aa17820e7f7e762b6e5"
+  },
+  "title": "Inception",
+  "director": "Christopher Nolan",
+  "genre": "Ciencia ficción",
+  "premiere": {
+    "$date": "2010-07-16T00:00:00.000Z"
+  },
+  "duration": 148,
+  "synopsis": "Un ladrón especializado en robar secretos de los sueños recibe una misión imposible: implantar una idea en la mente de un objetivo.",
+  "created": {
+    "$date": "2024-10-14T21:18:25.120Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8aa87820e7f7e762b6e8"
+  },
+  "title": "Gravity",
+  "director": "Alfonso Cuarón",
+  "genre": "Ciencia ficción",
+  "premiere": {
+    "$date": "2013-10-04T00:00:00.000Z"
+  },
+  "duration": 91,
+  "synopsis": "Dos astronautas quedan varados en el espacio después de que su transbordador es destruido.",
+  "created": {
+    "$date": "2024-10-14T21:18:32.255Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8ab17820e7f7e762b6eb"
+  },
+  "title": "Lady Bird",
+  "director": "Greta Gerwig",
+  "genre": "Comedia dramática",
+  "premiere": {
+    "$date": "2017-11-03T00:00:00.000Z"
+  },
+  "duration": 94,
+  "synopsis": "Una joven lucha por encontrar su identidad mientras navega por su último año de secundaria en Sacramento.",
+  "created": {
+    "$date": "2024-10-14T21:18:41.666Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8ab87820e7f7e762b6ee"
+  },
+  "title": "Titanic",
+  "director": "James Cameron",
+  "genre": "Romance",
+  "premiere": {
+    "$date": "1997-12-19T00:00:00.000Z"
+  },
+  "duration": 195,
+  "synopsis": "Una joven de clase alta y un artista de clase baja se enamoran a bordo del famoso trasatlántico.",
+  "created": {
+    "$date": "2024-10-14T21:18:48.773Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8abf7820e7f7e762b6f1"
+  },
+  "title": "Todo sobre mi madre",
+  "director": "Pedro Almodóvar",
+  "genre": "Drama",
+  "premiere": {
+    "$date": "1999-03-18T00:00:00.000Z"
+  },
+  "duration": 101,
+  "synopsis": "Una madre busca al padre de su hijo fallecido, un transexual que se convierte en actriz.",
+  "created": {
+    "$date": "2024-10-14T21:18:55.540Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8ac97820e7f7e762b6f4"
+  },
+  "title": "Fight Club",
+  "director": "David Fincher",
+  "genre": "Drama",
+  "premiere": {
+    "$date": "1999-10-15T00:00:00.000Z"
+  },
+  "duration": 139,
+  "synopsis": "Un hombre descontento con su vida se une a un club de lucha clandestino.",
+  "created": {
+    "$date": "2024-10-14T21:19:05.633Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670d8acf7820e7f7e762b6f7"
+  },
+  "title": "Spirited Away",
+  "director": "Hayao Miyazaki",
+  "genre": "Animación",
+  "premiere": {
+    "$date": "2001-07-20T00:00:00.000Z"
+  },
+  "duration": 125,
+  "synopsis": "Una niña se pierde en un mundo espiritual y debe encontrar la manera de regresar a casa.",
+  "created": {
+    "$date": "2024-10-14T21:19:11.869Z"
+  },
+  "__v": 0
+}]
