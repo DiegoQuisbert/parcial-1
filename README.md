@@ -9,6 +9,7 @@ En esta app tienes la capacidad de crearte una cuenta, tener un manejo de las cu
 - [Crear un usuario](#Crear-un-usuario)
 - [Añadir una película](#Añadir-una-película)
 - [Registar un director](#Registrar-un-director)
+- [Agregar una review](#Agregar-una-review)
 - [Rutas](#rutas)
 - [Modelos](#modelos)
 - [javascript](#javascript)
@@ -103,11 +104,12 @@ Colocar el ID de un usuario y presionar el botón
 #  json
 
 #     {
-#       "title": "Matrix",
-#       "genre": "Sci-Fi",
-#       "year": 1999,
-#       "director": "616e6e77eae4e232b8b758c7",
-#       "reviews": ["Increíble!", "Ciencia ficción en su máxima expresión"]
+#       "title": "Jurassic Park",
+#       "director": "Steven Spielberg",
+#       "genre": "Steven Spielberg",
+#       "premiere": "1993-06-11T00:00:00.000Z",
+#       "duration": 127,
+#       "synopsis": "Un grupo de personas visita un parque temático donde los dinosaurios han sido clonados a partir de ADN antiguo."
 #     }
 ```
 
@@ -121,11 +123,26 @@ Colocar el ID de un usuario y presionar el botón
 # json
 
 #     {
-#       "name": "Lana Wachowski",
-#       "birthYear": 1965,
-#       "nationality": "Estadounidense"
+#       "compName": "Lana Wachowski",
+#       "age": 1965,
+#       "biography": "Estadounidense"
 #     }
 
+```
+
+# Agregar una review
+
+``` bash
+#   Método: POST
+#   URL: https://127.0.0.1:3000/api/reviews
+#   body (JSON):
+
+# json
+
+#   {
+#       "review":"buena peli la verdad",
+#       "userId":"67098030d712df49e6d17f8c"
+#   }
 ```
 
 # Rutas
