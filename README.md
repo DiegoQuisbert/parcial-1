@@ -4,13 +4,15 @@ En esta app tienes la capacidad de crearte una cuenta, tener un manejo de las cu
 
 ## Tabla de contenidos
 
+- [Instalación](#Instalación)
+- [Uso de la página](#uso-de-la-página)
+- [Crear un usuario](#Crear-un-usuario)
+- [Añadir una película](#Añadir-una-película)
+- [Registar un director](#Registrar-un-director)
 - [Rutas](#rutas)
 - [Modelos](#modelos)
-- [controllers](#controllers)
-- [uso](#uso)
-- [Endpoints](#endpoints)
-- [Estructura del proyecto](#estructura-del-proyecto)
-- [Licencia](#licencia)
+- [javascript](#javascript)
+
 
 ## Instalación
 
