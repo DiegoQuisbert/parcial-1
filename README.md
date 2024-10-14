@@ -76,7 +76,7 @@ Colocar el ID de un usuario y presionar el botón
 
 ``` bash
 #     Método: POST
-#     URL: http://localhost:3000/users
+#     URL: http://127.0.0.1:3000/api/users
 #     Body (JSON):
 
 ``` 
@@ -97,7 +97,7 @@ Colocar el ID de un usuario y presionar el botón
 ``` bash
 
 #     Método: POST
-#     URL: http://localhost:3000/movies
+#     URL: http://127.0.0.1:3000/api/movies
 #     Body (JSON):
 
 #  json
@@ -115,7 +115,7 @@ Colocar el ID de un usuario y presionar el botón
 
 ``` bash
 #     Método: POST
-#     URL: http://localhost:3000/directors
+#     URL: http://127.0.0.1:3000/api/directors
 #     Body (JSON):
 
 # json
