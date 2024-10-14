@@ -7,11 +7,6 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 
-db.connect()
-  .then(() => console.log('✅ Conectado a la base de datos'))
-  .catch((err) => console.error('❌ Error al conectar con la base de datos:', err));
-
-
 app.use(express.json());
 app.use(express.static('public')); 
 
@@ -56,4 +51,3 @@ app.use((err, req, res, next) => {
 app.listen(port, () => { 
     console.log(`🚀 Servidor corriendo en http://localhost:${port}`);
 });
-z

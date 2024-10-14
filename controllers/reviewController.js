@@ -22,7 +22,7 @@ const createReview = async(req, res) => {
 
 const getReviews = async (req, res) => {
     const review = req.params;
-    res.status(200).json({msg: 'oke', data: reviews});
+    res.status(200).json({msg: 'oke', data: review});
 }
 
 const getReviewsByUserId = async (req, res) => {
