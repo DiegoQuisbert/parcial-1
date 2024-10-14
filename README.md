@@ -35,6 +35,10 @@ URI_BD=mongodb://127.0.0.1:27017/app
 
 npm i
 
+# Importar los datos de mongodb
+
+No se como explicar, pero en la base de datos simplemente importás el json y listo
+
 # Iniciar el proyecto
 
 npm start
