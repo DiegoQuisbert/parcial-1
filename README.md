@@ -85,7 +85,10 @@ Colocar el ID de un usuario y presionar el botón
 #   "password": "123456"
 # }
 
+```
 # Añadir una Película
+
+``` bash
 
 #     Método: POST
 #     URL: http://localhost:3000/movies
@@ -100,9 +103,11 @@ Colocar el ID de un usuario y presionar el botón
 #       "director": "616e6e77eae4e232b8b758c7",
 #       "reviews": ["Increíble!", "Ciencia ficción en su máxima expresión"]
 #     }
+```
 
 # Registrar un Director
 
+``` bash
 #     Método: POST
 #     URL: http://localhost:3000/directors
 #     Body (JSON):
@@ -118,7 +123,9 @@ Colocar el ID de un usuario y presionar el botón
 ```
 
 # Rutas
-# A continuación se describen las rutas disponibles en esta API:
+A continuación se describen las rutas disponibles en esta API:
+
+``` bash
 # Método	Endpoint	Descripción
 # POST	/users	Crear un nuevo usuario
 # POST	/movies	Añadir una nueva película
@@ -128,8 +135,12 @@ Colocar el ID de un usuario y presionar el botón
 # GET	/movies?name={name}	Buscar película por nombre
 # GET	/directors	Obtener todos los directores
 
+```
 # Modelos
+
+``` bash
 # User Model (models/userModel.js)
+```
 
 # javascript
 
