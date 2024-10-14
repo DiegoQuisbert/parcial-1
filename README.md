@@ -37,11 +37,42 @@ npm i
 
 npm start
 
+```
+# Uso de la página
+
+``` bash
+# Pegamos la URL en el navegador
+
+http://127.0.0.1:3000/
+
+# Obtener id's de usuarios, películas y directores
+
+Dar click a los respectivos botones para mostrar todo y ID
+
+# Buscar película por ID
+
+Colocar el ID de una película y presionar el botón
+
+# Buscar Reseña por ID
+
+Colocar el ID de un usuario y presionar el botón
+
+# Buscar usuario por ID
+
+Colocar el ID de un usuario y presionar el botón
+
+
+
+
+``` 
+
 # Crear un Usuario
 
 #     Método: POST
 #     URL: http://localhost:3000/users
 #     Body (JSON):
+
+``` bash
 
 # json
 
@@ -81,6 +112,8 @@ npm start
 #       "nationality": "Estadounidense"
 #     }
 
+```
+
 # Rutas
 # A continuación se describen las rutas disponibles en esta API:
 # Método	Endpoint	Descripción
@@ -97,6 +130,7 @@ npm start
 
 # javascript
 
+``` bash
 # const mongoose = require('mongoose');
 
 # const userSchema = new mongoose.Schema({
@@ -175,3 +209,4 @@ npm start
 
 # module.exports = { createMovie };
 
+```
