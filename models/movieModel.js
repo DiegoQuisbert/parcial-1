@@ -28,6 +28,10 @@ const movieSchema = new Schema({
     created: {
         type: Date,
         default: Date.now
+    },
+    poster: {
+        type: String,
+        required: true
     }
 });
 

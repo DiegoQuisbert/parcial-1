@@ -1,21 +1,23 @@
 const Movie = require('../models/movieModel'); 
 
 const addMovie = async (req, res) => {
-    const {title, director, genre, premiere, duration, synopsis} = req.body;
+    const { title, director, genre, premiere, duration, synopsis, poster } = req.body;
 
-    if(!title || !director || !genre || !premiere || !duration || !synopsis){
-        res.status(400).json({msg: 'Falta informacion :/', data: {title, director, genre, premiere, duration, synopsis}});
+    if (!title || !director || !genre || !premiere || !duration || !synopsis || !poster) {
+        return res.status(400).json({
+            msg: 'Falta información, asegúrate de incluir todos los campos, incluyendo el póster',
+            data: { title, director, genre, premiere, duration, synopsis, poster }
+        });
     }
 
     try {
-        const movie = await Movie.findById();
-
-        const newMovie = new Movie({title, director, genre, premiere, duration, synopsis});
+        const newMovie = new Movie({ title, director, genre, premiere, duration, synopsis, poster });
         await newMovie.save();
-        res.status(200).json({msg: 'La peli fue creada', data: newMovie})
-    }catch(error){
+
+        res.status(201).json({ msg: 'Película creada exitosamente', data: newMovie });
+    } catch (error) {
         console.error(error);
-        res.status(500).json({msg: 'contamos con un error chaval', data: {}});
+        res.status(500).json({ msg: 'Error al crear la película', error });
     }
 };
 
@@ -24,7 +26,8 @@ const getMovies = async (req, res) => {
         const movies = await Movie.find();
         res.status(200).json(movies);
     } catch (error) {
-        res.status(500).json({ message: 'Error al obtener las películas', error });
+        console.error(error);
+        res.status(500).json({ msg: 'Error al obtener las películas', error });
     }
 };
 
@@ -34,12 +37,13 @@ const getMovieById = async (req, res) => {
         const movie = await Movie.findById(id);
 
         if (!movie) {
-            return res.status(404).json({ message: 'Película no encontrada' });
+            return res.status(404).json({ msg: 'Película no encontrada' });
         }
 
         res.status(200).json(movie);
     } catch (error) {
-        res.status(500).json({ message: 'Error al obtener la película', error });
+        console.error(error);
+        res.status(500).json({ msg: 'Error al obtener la película', error });
     }
 };
 
@@ -49,14 +53,16 @@ const updateMovieById = async (req, res) => {
         const updatedMovie = await Movie.findByIdAndUpdate(id, req.body, { new: true });
 
         if (!updatedMovie) {
-            return res.status(404).json({ message: 'Película no encontrada' });
+            return res.status(404).json({ msg: 'Película no encontrada' });
         }
 
-        res.status(200).json(updatedMovie);
+        res.status(200).json({ msg: 'Película actualizada', data: updatedMovie });
     } catch (error) {
-        res.status(500).json({ message: 'Error al actualizar la película', error });
+        console.error(error);
+        res.status(500).json({ msg: 'Error al actualizar la película', error });
     }
 };
+
 
 const deleteMovieById = async (req, res) => {
     try {
@@ -64,40 +70,42 @@ const deleteMovieById = async (req, res) => {
         const deletedMovie = await Movie.findByIdAndDelete(id);
 
         if (!deletedMovie) {
-            return res.status(404).json({ message: 'Película no encontrada' });
+            return res.status(404).json({ msg: 'Película no encontrada' });
         }
 
-        res.status(200).json({ message: 'Película eliminada correctamente' });
+        res.status(200).json({ msg: 'Película eliminada correctamente' });
     } catch (error) {
-        res.status(500).json({ message: 'Error al eliminar la película', error });
+        console.error(error);
+        res.status(500).json({ msg: 'Error al eliminar la película', error });
     }
 };
 
 
 const filterMovies = async (req, res) => {
     try {
-        const { year, genre } = req.query;
+        const { genre } = req.query;
 
-        let filter = {};
-        if (year) filter.releaseYear = year;
+        const filter = {};
         if (genre) filter.genre = genre;
 
         const movies = await Movie.find(filter);
         res.status(200).json(movies);
     } catch (error) {
-        res.status(500).json({ message: 'Error al filtrar las películas', error });
+        console.error(error);
+        res.status(500).json({ msg: 'Error al filtrar las películas', error });
     }
 };
 
 
 const searchMovie = async (req, res) => {
     try {
-        const { name } = req.query;
+        const { title } = req.query;
 
-        const movies = await Movie.find({ name: { $regex: name, $options: 'i' } });
+        const movies = await Movie.find({ title: { $regex: title, $options: 'i' } });
         res.status(200).json(movies);
     } catch (error) {
-        res.status(500).json({ message: 'Error al buscar la película', error });
+        console.error(error);
+        res.status(500).json({ msg: 'Error al buscar la película', error });
     }
 };
 

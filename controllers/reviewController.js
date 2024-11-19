@@ -4,6 +4,8 @@ const User = require('../models/userModel');
 const createReview = async(req, res) => {
     const { review, userId } = req.body;
 
+    console.log(review, userId)
+
     if (!review || !userId) {
         return res.status(400).json({ msg: 'Faltan parámetros :/', data: { review, userId } });
     }
@@ -25,7 +27,9 @@ const createReview = async(req, res) => {
 
 
 const getReviews = async (req, res) => {
-    const reviews = await Review.find().populate('user');
+    const userId = req.body.userId;
+
+    const reviews = await Review.find( {user: userId} ).populate('user');
     res.status(200).json({msg: 'oke', data: reviews});
 }
 

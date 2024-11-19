@@ -1,6 +1,6 @@
 const User = require('../models/userModel.js');
 
-const jwt = ('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -34,11 +34,13 @@ const login = async (req, res) => {
         const user = await User.findOne({email});
         if(!user){
             res.status(401).json({msg: 'El email es incorrecto o no existe', data: {}});
+            return;
         }
 
         const passwordOk = await bcrypt.compare(password, user.password);
         if(!passwordOk){
             res.status(401).json({msg: 'La contraseña es incorrecta o no existe', data: {}});
+            return;
         }
 
         const data = {
@@ -96,7 +98,8 @@ const updateUserById = async (req, res) => {
     const {name, email, password} = req.body;
 
     try {
-        const user = await User.findByIdAndUpdate(id, {name, email, password}, {new: true});
+    const passwordHash = await bcrypt.hash(password, salt);
+        const user = await User.findByIdAndUpdate(id, {name, email, password:passwordHash}, {new: true});
         if(user){
             res.status(200).json({msg: 'Usuario actualizado', data: user});
         }else{
