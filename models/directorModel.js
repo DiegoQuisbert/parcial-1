@@ -14,6 +14,10 @@ const directorSchema = new Schema({
         type: String,
         required: true
     },
+    photo: {
+        type: String,
+        required: true
+    },
     created: {
         type: Date,
         default: Date.now

@@ -1,16 +1,16 @@
 const Director = require('../models/directorModel.js');
 
 const addDirector = async (req, res) => {
-    const {compName, age, biography, } = req.body;
+    const {compName, age, biography, photo, } = req.body;
 
-    if(!compName || !age || !biography){
-        return res.status(400).json({msg: 'Faltan parámetros :/', data: {compName, age, biography}});
+    if(!compName || !age || !biography || !photo){
+        return res.status(400).json({msg: 'Faltan parámetros :/', data: {compName, age, biography, photo}});
     }
 
     try {
         const director = await Director.findById();
 
-        const newDirector = new Director({biography, age, compName});
+        const newDirector = new Director({biography, age, compName, photo});
         await newDirector.save();
         res.status(200).json({msg: 'El director fue añadido', data: newDirector})
     }catch(error){
