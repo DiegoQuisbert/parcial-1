@@ -30,7 +30,8 @@ cd parcial-1
 # crear un archivo nuevo llamado .env con los siguientes datos
 
 PORT=3000
-URI_BD=mongodb://127.0.0.1:27017/app
+URI_BD=mongodb+srv://diegoquisbert:oUZ7ybwkvox2qvoy@cluster0.f1mw7.mongodb.net/parcial-2?retryWrites=true&w=majority&appName=Cluster0
+SECRETKEY=appTareas
 
 # Instalar las dependencias
 
