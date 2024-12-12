@@ -1,11 +1,12 @@
 const Movie = require('../models/movieModel'); 
+const Review = require('../models/reviewModel');
 
 const addMovie = async (req, res) => {
     const { title, director, genre, premiere, duration, synopsis, poster } = req.body;
 
     if (!title || !director || !genre || !premiere || !duration || !synopsis || !poster) {
         return res.status(400).json({
-            msg: 'Falta información, asegúrate de incluir todos los campos, incluyendo el póster',
+            msg: 'Faltan parámetros',
             data: { title, director, genre, premiere, duration, synopsis, poster }
         });
     }
@@ -14,10 +15,10 @@ const addMovie = async (req, res) => {
         const newMovie = new Movie({ title, director, genre, premiere, duration, synopsis, poster });
         await newMovie.save();
 
-        res.status(201).json({ msg: 'Película creada exitosamente', data: newMovie });
+        res.status(201).json({ msg: 'Se añadió la película', data: newMovie });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ msg: 'Error al crear la película', error });
+        res.status(500).json({ msg: 'Error al añadir la película', error });
     }
 };
 
@@ -32,18 +33,29 @@ const getMovies = async (req, res) => {
 };
 
 const getMovieById = async (req, res) => {
+    const { id } = req.params;
+
     try {
-        const { id } = req.params;
         const movie = await Movie.findById(id);
 
         if (!movie) {
             return res.status(404).json({ msg: 'Película no encontrada' });
         }
 
-        res.status(200).json(movie);
+        const reviews = await Review.find({ movie: id })
+            .populate('user', 'name') 
+            .select('review created');
+
+        res.status(200).json({
+            msg: 'Película encontrada',
+            data: {
+                movie,
+                reviews
+            }
+        });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ msg: 'Error al obtener la película', error });
+        res.status(500).json({ msg: 'Error al obtener la película', data: {} });
     }
 };
 
@@ -80,7 +92,6 @@ const deleteMovieById = async (req, res) => {
     }
 };
 
-
 const filterMovies = async (req, res) => {
     try {
         const { genre } = req.query;
@@ -95,7 +106,6 @@ const filterMovies = async (req, res) => {
         res.status(500).json({ msg: 'Error al filtrar las películas', error });
     }
 };
-
 
 const searchMovie = async (req, res) => {
     try {

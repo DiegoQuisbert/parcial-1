@@ -54,13 +54,13 @@ const login = async (req, res) => {
         res.status(200).json({msg: 'exito!', data: {jwt: token}});
     } catch(error){
         console.error(error)
-        res.status(500).json({msg: 'tenemo un error wtf', data: users});
+        res.status(500).json({msg: 'error al logearse', data: users});
     }
 }
 
 const getUser = async (req, res)=>{
     const users = await User.find();
-    res.status(200).json({msg: 'dale', data: users});
+    res.status(200).json({msg: 'estos son los usuarios', data: users});
 }
 
 const getUsersById = async(req, res) =>{
@@ -107,7 +107,7 @@ const updateUserById = async (req, res) => {
         }
     }catch (error) {
         console.error(error);
-        res.status(500).json({msg: 'wtf un error', data: {}})
+        res.status(500).json({msg: 'error al actualizar el usuario', data: {}})
     }
 }
 

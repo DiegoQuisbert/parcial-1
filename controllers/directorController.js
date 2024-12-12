@@ -4,7 +4,7 @@ const addDirector = async (req, res) => {
     const {compName, age, biography, photo, } = req.body;
 
     if(!compName || !age || !biography || !photo){
-        return res.status(400).json({msg: 'Faltan parámetros :/', data: {compName, age, biography, photo}});
+        return res.status(400).json({msg: 'Faltan parámetros', data: {compName, age, biography, photo}});
     }
 
     try {
@@ -15,7 +15,7 @@ const addDirector = async (req, res) => {
         res.status(200).json({msg: 'El director fue añadido', data: newDirector})
     }catch(error){
         console.error(error);
-        res.status(500).json({msg: 'contamos con un error chaval', data: {}});
+        res.status(500).json({msg: 'El director no pudo ser añadido', data: {}});
     }
 };
 

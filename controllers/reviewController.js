@@ -1,30 +1,38 @@
 const Review = require('../models/reviewModel');
 const User = require('../models/userModel');
+const Movie = require('../models/movieModel');
 
-const createReview = async(req, res) => {
-    const { review, userId } = req.body;
+const createReview = async (req, res) => {
+    const { review, userId, movieId } = req.body;
 
-    console.log(review, userId)
+    console.log(review, userId, movieId);
 
-    if (!review || !userId) {
-        return res.status(400).json({ msg: 'Faltan parámetros :/', data: { review, userId } });
+    if (!review || !userId || !movieId) {
+        return res.status(400).json({ 
+            msg: 'Faltan parámetros', 
+            data: { review, userId, movieId } 
+        });
     }
 
     try {
         const user = await User.findById(userId);
+        const movie = await Movie.findById(movieId);
+
         if (!user) {
             return res.status(404).json({ msg: 'Usuario no encontrado' });
         }
+        if (!movie) {
+            return res.status(404).json({ msg: 'Película no encontrada' });
+        }
 
-        const newReview = new Review({ review, user: user._id });
+        const newReview = new Review({ review, user: user._id, movie: movie._id });
         await newReview.save();
         res.status(200).json({ msg: 'La reseña fue creada', data: newReview });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ msg: 'Contamos con un error', data: {} });
+        res.status(500).json({ msg: 'La reseña no pudo ser creada', data: {} });
     }
-}
-
+};
 
 const getReviews = async (req, res) => {
     const userId = req.body.userId;
@@ -47,35 +55,71 @@ const getReviewsByUserId = async (req, res) => {
         res.status(500).json({ msg: 'Error al obtener las reseñas', data: {} });
     }
 }
+
+const getReviewsByMovieId = async (req, res) => {
+    const {movieId} = req.params;
+    try{
+        const reviews = await Review.find({movie: movieId}).populate('user').populate('movie');
+
+        if (reviews.length > 0) {
+            res.status(200).json({msg: 'Reseñas encontradas', data: rewviews});
+        } else {
+            res.status(404).json({msg: 'Esta película no tiene reseñas'});
+        }
+    } catch (error){
+        console.error(error);
+        res.status(500).json({msg: 'Error al obtener las reseñas', data: {} });
+    }
+}
+
+const getReviewsByUserAndMovie = async (req, res) => {
+    const {userId, movieId} = req.query;
+
+    try {
+        const filter = {};
+        if (userId) filter.user = userId;
+        if (movieId) filter.movie = movieId;
+
+        const reviews = await Review.find(filter).populate('user').populate('movie');
+        res.status(200).json({msg: 'Reseñas encontradas', data: reviews});
+    } catch (error){
+        console.error(error);
+        res.status(500).json({msg: 'Error al obtener las resñeas', data: {} });
+    }
+}
+
 const deleteReviewsById = async (req, res) => {
     const {id} = req.params;
     try {
         const review = await Review.findByIdAndDelete(id);
         if(review){
-            res.status(200).json({msg: 'tarea eliminada', data: review});
+            res.status(200).json({msg: 'reseña eliminada', data: review});
         }else {
-            res.status(404).json({msg: 'La tarea no ha sido eliminada', data: {}})
+            res.status(404).json({msg: 'La reseña no ha sido eliminada', data: {}})
         }
     }catch(error){
         console.error(error);
-        res.status(500).json({msg: 'tenemos otro un nuevo error tio', data: {}})
+        res.status(500).json({msg: 'Error al querer eliminar la reseña', data: {}})
     }
 }
 
 const updateReviewById = async (req, res) => {
-    const {id} = req.params;
-    const {review} = req.body;
-    try {
-        const review = await Review.findByIdAndUpdate(id, {review}, {new: true});
-        if(review){
-            res.status(200).json({msg: 'tarea actualizada', data: review});
-        }else {
-            res.status(404).json({msg: 'La tarea no ha sido actualizada', data: {}})
-        }
-    }catch(error){
-        console.error(error);
-        res.status(500).json({msg: 'ok tenemos otro nuevo error', data: {}})
-    }
-}
+    const { id } = req.params;
+    const { review: newReview } = req.body;
 
-module.exports = {createReview, getReviews, getReviewsByUserId, deleteReviewsById, updateReviewById};
+    try {
+        const updatedReview = await Review.findByIdAndUpdate(id, { review: newReview }, { new: true });
+
+        if (updatedReview) {
+            res.status(200).json({ msg: 'reseña actualizada', data: updatedReview });
+        } else {
+            res.status(404).json({ msg: 'La reseña no ha sido actualizada', data: {} });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: 'error al actualizar la reseña', data: {} });
+    }
+};
+
+
+module.exports = {createReview, getReviews, getReviewsByUserId, getReviewsByMovieId, getReviewsByUserAndMovie, deleteReviewsById, updateReviewById};
