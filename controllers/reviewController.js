@@ -5,8 +5,6 @@ const Movie = require('../models/movieModel');
 const createReview = async (req, res) => {
     const { review, userId, movieId } = req.body;
 
-    console.log(review, userId, movieId);
-
     if (!review || !userId || !movieId) {
         return res.status(400).json({ 
             msg: 'Faltan parámetros', 
@@ -27,6 +25,7 @@ const createReview = async (req, res) => {
 
         const newReview = new Review({ review, user: user._id, movie: movie._id });
         await newReview.save();
+
         res.status(200).json({ msg: 'La reseña fue creada', data: newReview });
     } catch (error) {
         console.error(error);
@@ -62,7 +61,7 @@ const getReviewsByMovieId = async (req, res) => {
         const reviews = await Review.find({movie: movieId}).populate('user').populate('movie');
 
         if (reviews.length > 0) {
-            res.status(200).json({msg: 'Reseñas encontradas', data: rewviews});
+            res.status(200).json({msg: 'Reseñas encontradas', data: reviews});
         } else {
             res.status(404).json({msg: 'Esta película no tiene reseñas'});
         }
