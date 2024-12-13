@@ -26,19 +26,24 @@ const createReview = async (req, res) => {
         const newReview = new Review({ review, user: user._id, movie: movie._id });
         await newReview.save();
 
-        res.status(200).json({ msg: 'La reseña fue creada', data: newReview });
+        res.status(200).json({msg: 'La reseña fue creada', data: {_id: newReview._id, review: newReview.review, created: newReview.created, user: {name: user.name, _id: user._id,
+},
+movie: newReview.movie,
+            },
+        });
     } catch (error) {
         console.error(error);
         res.status(500).json({ msg: 'La reseña no pudo ser creada', data: {} });
     }
 };
 
-const getReviews = async (req, res) => {
-    const userId = req.body.userId;
 
-    const reviews = await Review.find( {user: userId} ).populate('user');
-    res.status(200).json({msg: 'oke', data: reviews});
-}
+const getReviews = async (req, res) => {
+    const { userId } = req.query;
+
+    const reviews = await Review.find({ user: userId }).populate('user');
+    res.status(200).json({ msg: 'oke', data: reviews });
+};
 
 const getReviewsByUserId = async (req, res) => {
     const { id } = req.params;
