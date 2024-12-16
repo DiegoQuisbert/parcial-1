@@ -24,13 +24,24 @@ const addMovie = async (req, res) => {
 
 const getMovies = async (req, res) => {
     try {
-        const movies = await Movie.find();
+        const { title, genre } = req.query;
+
+        const filter = {};
+        if (title) {
+            filter.title = { $regex: title, $options: 'i' };
+        }
+        if (genre) {
+            filter.genre = { $regex: genre, $options: 'i' };
+        }
+
+        const movies = await Movie.find(filter);
         res.status(200).json(movies);
     } catch (error) {
         console.error(error);
         res.status(500).json({ msg: 'Error al obtener las películas', error });
     }
 };
+
 
 const getMovieById = async (req, res) => {
     const { id } = req.params;
@@ -95,7 +106,6 @@ const deleteMovieById = async (req, res) => {
 const filterMovies = async (req, res) => {
     try {
         const { genre } = req.query;
-
         const filter = {};
         if (genre) filter.genre = genre;
 
@@ -119,12 +129,5 @@ const searchMovie = async (req, res) => {
     }
 };
 
-module.exports = {
-    addMovie,
-    getMovies,
-    getMovieById,
-    updateMovieById,
-    deleteMovieById,
-    filterMovies,
-    searchMovie
-};
+
+module.exports = {addMovie, getMovies, getMovieById, updateMovieById, deleteMovieById, filterMovies, searchMovie};

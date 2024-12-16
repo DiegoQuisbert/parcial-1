@@ -45,7 +45,8 @@ const login = async (req, res) => {
 
         const data = {
             userId: user._id,
-            name: user.name
+            name: user.name,
+            email: user.email
         }
 
         const token = jwt.sign(data, secretKey, {expiresIn: '1h'});
@@ -79,19 +80,24 @@ const getUsersById = async(req, res) =>{
 }
 
 const deleteUserById = async (req, res) => {
-    const {id} = req.params;
-    try{
-        const user = await User.findByIdAndDelete(id);
-        if(user){
-            res.status(200).json({msg: 'usuario eliminado', data: user});
-        }else{
-            res.status(400).json({msg: 'el usuario no pudo ser eliminado', data: {}})
+    try {
+        const { id } = req.params;
+        const userId = req.body.userId; 
+
+        if (id !== userId) {
+        return res.status(403).json({ msg: 'No tienes permiso para eliminar este usuario.' });
         }
-    }catch(error){
-        console.error(error);
-        res.status(500).json({msg: 'Ha ocurrido un error qué', data: {}})
+
+        const deletedUser = await User.findByIdAndDelete(id);
+        if (!deletedUser) {
+        return res.status(404).json({ msg: 'Usuario no encontrado.' });
+        }
+
+        res.status(200).json({ msg: 'Usuario eliminado correctamente.' });
+    } catch (error) {
+        res.status(500).json({ msg: 'Error al eliminar el usuario.', error });
     }
-}
+};
 
 const updateUserById = async (req, res) => {
     const {id} = req.params;

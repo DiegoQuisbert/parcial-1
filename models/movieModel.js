@@ -15,7 +15,7 @@ const movieSchema = new Schema({
         required: true
     },
     premiere: {
-        type: Date,
+        type: String
     },
     duration: {
         type: Number,
